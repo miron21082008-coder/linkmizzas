@@ -43,17 +43,6 @@ export function LinkSite() {
         <div className="pointer-events-none absolute -left-20 top-1/3 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl animate-float-glow" />
         <div className="pointer-events-none absolute -right-20 bottom-20 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl animate-float-glow" />
 
-        {/* Top-right avatar */}
-        <motion.a
-          href="#links"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="absolute right-5 top-5 z-10 block h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/30 shadow-glow"
-          aria-label="Profile"
-        >
-          <img src={siteConfig.avatar} alt="" width={48} height={48} className="h-full w-full object-cover" />
-        </motion.a>
 
         {/* Centered content */}
         <div className="relative z-10 flex h-full flex-col items-center justify-end pb-16 text-center">
