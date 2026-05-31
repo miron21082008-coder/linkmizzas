@@ -140,69 +140,6 @@ export function LinkSite() {
         ))}
       </section>
 
-      {/* TABS */}
-      <section className="mt-12">
-        <div className="glass mx-auto flex w-full max-w-xs rounded-full p-1">
-          {(["links", "media"] as const).map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`relative flex-1 rounded-full px-4 py-2 text-sm font-medium capitalize transition ${
-                tab === t ? "text-background" : "text-white/70 hover:text-white"
-              }`}
-            >
-              {tab === t && (
-                <motion.span
-                  layoutId="tab-pill"
-                  className="absolute inset-0 rounded-full bg-white"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              )}
-              <span className="relative">{t}</span>
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-6">
-          {tab === "links" ? (
-            <motion.p
-              key="links"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center text-sm text-muted-foreground"
-            >
-              Tap a button above to follow me everywhere ✨
-            </motion.p>
-          ) : (
-            <motion.div
-              key="media"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="grid grid-cols-2 gap-3 sm:grid-cols-3"
-            >
-              {siteConfig.media.map((src, i) => (
-                <motion.a
-                  key={i}
-                  href={src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.03 }}
-                  className="group relative aspect-square overflow-hidden rounded-2xl shadow-soft"
-                >
-                  <img
-                    src={src}
-                    alt=""
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                </motion.a>
-              ))}
-            </motion.div>
-          )}
-        </div>
-      </section>
-
       <footer className="mt-16 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} {siteConfig.name}
       </footer>
