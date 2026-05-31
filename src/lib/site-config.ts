@@ -3,7 +3,7 @@ import cta from "@/assets/cta-card.jpg";
 import avatar from "@/assets/avatar.jpg";
 
 export const siteConfig = {
-  name: "AVA ROSE",
+  name: "MIZZAS",
   username: "@mizzas",
   avatar,
   heroImage: hero,
