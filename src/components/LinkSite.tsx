@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { SiTiktok, SiInstagram } from "react-icons/si";
 import { Heart, Crown } from "lucide-react";
@@ -16,7 +16,6 @@ const socialIcon = (name: string) => {
 };
 
 export function LinkSite() {
-  const [tab, setTab] = useState<"links" | "media">("links");
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 600], [0, 150]);
   const heroScale = useTransform(scrollY, [0, 600], [1, 1.15]);
