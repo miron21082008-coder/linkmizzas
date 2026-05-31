@@ -1,29 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LinkSite } from "@/components/LinkSite";
+import { siteConfig } from "@/lib/site-config";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: `${siteConfig.name} — All my links` },
+      { name: "description", content: `Follow ${siteConfig.name} (${siteConfig.username}) on TikTok, Instagram, Fanvue, and Throne. Exclusive content, wishlist, and more.` },
+      { property: "og:title", content: `${siteConfig.name} — All my links` },
+      { property: "og:description", content: `Follow ${siteConfig.name} everywhere. Exclusive content & more.` },
+      { property: "og:type", content: "profile" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <LinkSite />;
 }
