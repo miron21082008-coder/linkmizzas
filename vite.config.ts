@@ -7,5 +7,11 @@ export default defineConfig({
 
   tanstackStart: {
     server: { entry: "server" },
+
+    prerender: {
+      enabled: true,
+      autoStaticPathsDiscovery: true,
+      crawlLinks: true,
+    },
   },
 });
