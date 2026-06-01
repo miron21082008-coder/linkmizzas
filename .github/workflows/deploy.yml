@@ -55,7 +55,7 @@ jobs:
 
           cp "$PUBLISH_DIR/index.html" "$PUBLISH_DIR/404.html"
           touch "$PUBLISH_DIR/.nojekyll"
-          echo "mizas.fun" > "$PUBLISH_DIR/CNAME"
+          echo "mizzas.fun" > "$PUBLISH_DIR/CNAME"
           echo "PUBLISH_DIR=$PUBLISH_DIR" >> $GITHUB_ENV
 
       - name: Setup GitHub Pages
